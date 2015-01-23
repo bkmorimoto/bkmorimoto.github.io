@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <header>
-    <link rel="stylesheet"; type="text/css"; href="stylesheets/default.css" />
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/default.css" />
+    <meta charset="UTF-8">
     <title>Ben Morimoto's Homepage</title>
-  </header>
+  </head>
   <body>
     <div class="head">
       <span class="headtitle">The Rustic Cabana</span>
-      <div class="socmed">
-        <span class="media"><a href="https://www.facebook.com/ben.morimoto.1"><img src="imgs/facebook.png" /></a></span>
-        <span class="media"><a href="https://twitter.com/benmorimoto"><img src="imgs/twitter.png" /></a></span>
-        <span class="media"><a href="https://github.com/bkmorimoto"><img src="imgs/github.png" /></a></span>
-      </div>
+      <span class="socmed">
+        <span class="media"><a href="https://www.facebook.com/ben.morimoto.1"><img src="imgs/facebook.png" alt="Facebook" /></a></span>
+        <span class="media"><a href="https://twitter.com/benmorimoto"><img src="imgs/twitter.png" alt="Twitter" /></a></span>
+        <span class="media"><a href="https://github.com/bkmorimoto"><img src="imgs/github.png" alt="GitHub" /></a></span>
+      </span>
       <br>
       <span class="subhead">A site created for DBC students by DBC students</span>
     </div>
-    <div id="buttons">
-      <a href="aboutme.html"><button type="submit" class="myButton">About Me</button></a>
-      <a href="blog/index.html"><button type="submit" class="myButton">Blog</button></a>
-      <a href="projects/index.html"><button type="submit" class="myButton">Projects</button></a>
+    <form method="post" id="buttons">
+      <button type="submit" class="myButton" formaction="aboutme.html">About Me</button>
+      <button type="submit" class="myButton" formaction="blog/index.html">Blog</button>
+      <button type="submit" class="myButton" formaction="projects/index.html">Projects</button>
+    </form>
+    <div class="home-img">
+      <img src="imgs/lego-starwars.png" alt="Lego Star Wars" />
+    </div>
+    <hr>
+    <div class="footer">
+      <span>If you have any feedback, you can reach me at <a href="mailto:bkmorimoto@gmail.com">bkmorimoto@gmail.com</a></span>
+    </div>
   </body>
 </html>
