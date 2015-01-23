@@ -18,7 +18,7 @@ html {
 }
 .subhead {
   font-size: 15px;
-  margin-left: 12px;
+  margin-left: 104px;
 }
 .headtitle {
   font-size: 35px;
@@ -58,4 +58,7 @@ img {
 }
 .footer {
   font-size: 13px;
+}
+td {
+  padding: 2px 10px 2px 10px;
 }
