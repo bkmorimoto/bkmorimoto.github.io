@@ -1,3 +1,23 @@
-.bold {
-  font-weight: bold;
+.top-button {
+  border: 4px solid black;
+  padding: 2px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.sidebar {
+  display: inline-block;
+  float: right;
+  margin-top: 80px;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 10px;
+}
+.blogpost {
+  display: inline-block;
+  width: 80%;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
 }
