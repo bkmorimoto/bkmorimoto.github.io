@@ -10,14 +10,17 @@
   margin-top: 80px;
   border: 5px solid black;
   border-radius: 5px;
-  margin-right: 20px;
-  padding: 10px;
+  width: 15%;
+  margin-right:30px;
+  padding: 5px;
 }
 .blogpost {
   display: inline-block;
-  width: 80%;
+  width: 75%;
   border: 5px solid black;
   border-radius: 5px;
   margin-top: 20px;
   padding: 10px;
+}
+.bigspace {
 }
