@@ -7,37 +7,40 @@
 </head>
 
 <main>
-  <div>
-    <span class="top-button"><a href="../index.html">Home Page</a></span>
-    <span class="top-button"><a href="index.html">Blog Posts</a></span>
-  </div>
-  <div class="blogpost">
-    <h1>Version Control, Git, GitHub, and You</h1>
-    <h2>A beginner's guide by an ex-beginner</h2>
-    <h4>1/14/15</h4>
-  
-    <section>
-      <h5>What are the benefits of version control?</h5>
-      <p>
-        Version control is used to keep track of all changes that are made to a project so that they can  be managed. Developers use version control to help with implementing new features without  breaking the current code. Because the changes are being tracked, it is easy to roll back to   previous versions if anything were to go wrong and stop working. It also helps when collaborating   with other developers because you can have multiple people touching different parts of the code   without risking one person overwriting the work of someone else. Instead of everyone working on   the master branch, everyone works on their own branch and then merges it into the master branch   when ready.
-      </p>
-      <h5>How does git help you keep track of changes?</h5>
-      <p>
-          You can use 'git status' to track when changes have been made compared to your last commit.   From there, you can then selectively add or remove the changes that you actually want to save   to the next commit; this is known as the staging phase. Once you have verified the files that   have been changed, you can save those changes by performing a 'commit'. This is the actual save   of the files. You typically add a comment to the commit so that it is clear what the commit was   for (adding a new feature, fixing a bug, etc.). From here, you can use 'git log' to look at all   the commits that have been made over time. This is where you can truly see when the changes   were made and, with a good comment system, know what was actually changed. Each commit has a  relevant commit ID, which can be used to restore the code to what it was at the time of the  commit.
-      </p>
-      <h5>Why use GitHub to store code?</h5>
-      <p>
-          GitHub has established itself as a stable community where developers can store their code for   other people to access. If you are working on a collaborative project, you can use GitHub to  manage the merges from multiple users/branches. If you have a product that you want to share   with the community, you can place it on GitHub so that others can take a copy of it to use  themselves or to even add on to it. And, in general, it has a nice enough UI to manage all your  own repositories, search for other repositories, and explore what else is out there.
-      </p>
-    </section>
-  </div>
-  <div class="sidebar">
-    <h3>Recent Blog Posts</h3>
-    <ul>
-      <li><a href="t1-git-blog.html">My first post</a></li>
-      <li><a href="c1-chefs-kitchen.html">My second post</a></li>
-      <li><a href="t2-css-design.html">My third post</a></li>
-    </ul>
+  <div class="container">
+    <header>
+      <span class="top-button"><a href="../index.html">Home Page</a></span>
+      <span class="top-button"><a href="index.html">Blog Posts</a></span>
+    </header>
+    <div class="main-content">
+      <h1>Version Control, Git, GitHub, and You</h1>
+      <h2>A beginner's guide by an ex-beginner</h2>
+      <h4>1/14/15</h4>
+    
+      <section>
+        <h5>What are the benefits of version control?</h5>
+        <p>
+          Version control is used to keep track of all changes that are made to a project so that they can  be managed. Developers use version  control to help with implementing new features without  breaking the current code. Because the changes are being tracked, it is easy to  roll back to   previous versions if anything were to go wrong and stop working. It also helps when collaborating   with other  developers because you can have multiple people touching different parts of the code   without risking one person overwriting the work   of someone else. Instead of everyone working on   the master branch, everyone works on their own branch and then merges it into the   master branch   when ready.
+        </p>
+        <h5>How does git help you keep track of changes?</h5>
+        <p>
+            You can use 'git status' to track when changes have been made compared to your last commit.   From there, you can then selectively  add or remove the changes that you actually want to save   to the next commit; this is known as the staging phase. Once you have   verified the files that   have been changed, you can save those changes by performing a 'commit'. This is the actual save   of the  files. You typically add a comment to the commit so that it is clear what the commit was   for (adding a new feature, fixing a bug,  etc.). From here, you can use 'git log' to look at all   the commits that have been made over time. This is where you can truly see  when the changes   were made and, with a good comment system, know what was actually changed. Each commit has a  relevant commit ID,   which can be used to restore the code to what it was at the time of the  commit.
+        </p>
+        <h5>Why use GitHub to store code?</h5>
+        <p>
+            GitHub has established itself as a stable community where developers can store their code for   other people to access. If you are  working on a collaborative project, you can use GitHub to  manage the merges from multiple users/branches. If you have a product that  you want to share   with the community, you can place it on GitHub so that others can take a copy of it to use  themselves or to even  add on to it. And, in general, it has a nice enough UI to manage all your  own repositories, search for other repositories, and  explore what else is out there.
+        </p>
+      </section>
+    </div>
+    <div class="sidebar">
+     <div class="recent-blog">
+      <h3>Recent Blog Posts</h3>
+      <ul>
+        <li><a href="t1-git-blog.html">My first post</a></li>
+        <li><a href="c1-chefs-kitchen.html">My second post</a></li>
+        <li><a href="t2-css-design.html">My third post</a></li>
+      </ul>
+    </div>
   </div>
 </main>
 

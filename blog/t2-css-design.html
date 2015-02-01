@@ -7,42 +7,46 @@
 </head>
 
 <main>
-  <div>
-    <span class="top-button"><a href="../index.html">Home Page</a></span>
-    <span class="top-button"><a href="index.html">Blog Posts</a></span>
-  </div>
-  <div class="blogpost">
-    <h1>When to Use Classes vs. IDs</h1>
-    <h4>1/22/15</h4>
-  
-    <section>
-      <p>I want to discuss best practices when deciding to used a class or id attribute when you want to  format the html of you website. After some quick research, it is actually quite straightforward on   when you should use one or the other.</p>
-      <hr>
-      <p><span class="bold">Class:</span> The advantage of defining a class is that it can be used across   multiple elements when they all need the same formatting.</p>
-      <img src="../imgs/t2-class-1.png" /><img src="../imgs/t2-class-9.png" />
-      <p>In this example, we have defined the class "address" because we want to format each line of the  address the same way without affecting ALL div elements. Because the classes can be reused, this   makes the CSS coding much easier and less repetitive. It would look something like this:</p>
-      <img src="../imgs/t2-class-2.png" /><img src="../imgs/t2-class-7.png" />
-      <p>Now all three pieces are bolded, the same size, and the same color.</p>
-      <p>You can also have multiple classes per element if you need some kind of combined formatting on   certain elements of you choice.</p>
-      <img src="../imgs/t2-class-3.png" /><img src="../imgs/t2-class-8.png" />
-      <p>We have combined both the address class and the fancy class, so the name on our webpage with not   only be bolded, larger, and red; it will be also be formatted by fancy!</p>
-      <hr>
-      <p><span class="bold">ID:</span> This is unique to the element that it is defined under and CANNOT  be used for multiple elements. Here I have defined my social media div, and since this is very   specific to how I would format my three images, I would not reuse the same formatting anywhere else   on my website:</p>
-      <img src="../imgs/t2-class-4.png" /><img src="../imgs/t2-class-10.png" />
-      <img src="../imgs/t2-class-11.png" />
-      <p>An element can have both a class and an ID defined, but the ID takes precedence if there are any   conflicting features.</p>
-      <img src="../imgs/t2-class-5.png" />
-      <br>
-      <img src="../imgs/t2-class-6.png" /><img src="../imgs/t2-class-12.png" />
-      <p>This element has the class "name" and the ID "ben." Looking at the CSS we can see that font-size   is defined in both the class and the ID, but because ID has precedence, the actual font size  displayed with be 30 pixels.</p>
-    </section>
-  </div>
-  <div class="sidebar">
-    <h3>Recent Blog Posts</h3>
-    <ul>
-      <li><a href="t1-git-blog.html">My first post</a></li>
-      <li><a href="c1-chefs-kitchen.html">My second post</a></li>
-      <li><a href="t2-css-design.html">My third post</a></li>
-    </ul>
+  <div class="container">
+    <header>
+      <span class="top-button"><a href="../index.html">Home Page</a></span>
+      <span class="top-button"><a href="index.html">Blog Posts</a></span>
+    </header>
+    <div class="main-content">
+      <h1>When to Use Classes vs. IDs</h1>
+      <h4>1/22/15</h4>
+    
+      <section>
+        <p>I want to discuss best practices when deciding to used a class or id attribute when you want to  format the html of you website. After   some quick research, it is actually quite straightforward on   when you should use one or the other.</p>
+        <hr>
+        <p><span class="bold">Class:</span> The advantage of defining a class is that it can be used across   multiple elements when they all   need the same formatting.</p>
+        <img src="../imgs/t2-class-1.png" /><img src="../imgs/t2-class-9.png" />
+        <p>In this example, we have defined the class "address" because we want to format each line of the  address the same way without  affecting ALL div elements. Because the classes can be reused, this   makes the CSS coding much easier and less repetitive. It would look  something like this:</p>
+        <img src="../imgs/t2-class-2.png" /><img src="../imgs/t2-class-7.png" />
+        <p>Now all three pieces are bolded, the same size, and the same color.</p>
+        <p>You can also have multiple classes per element if you need some kind of combined formatting on   certain elements of you choice.</p>
+        <img src="../imgs/t2-class-3.png" /><img src="../imgs/t2-class-8.png" />
+        <p>We have combined both the address class and the fancy class, so the name on our webpage with not   only be bolded, larger, and red; it   will be also be formatted by fancy!</p>
+        <hr>
+        <p><span class="bold">ID:</span> This is unique to the element that it is defined under and CANNOT  be used for multiple elements. Here I   have defined my social media div, and since this is very   specific to how I would format my three images, I would not reuse the same   formatting anywhere else   on my website:</p>
+        <img src="../imgs/t2-class-4.png" /><img src="../imgs/t2-class-10.png" />
+        <img src="../imgs/t2-class-11.png" />
+        <p>An element can have both a class and an ID defined, but the ID takes precedence if there are any   conflicting features.</p>
+        <img src="../imgs/t2-class-5.png" />
+        <br>
+        <img src="../imgs/t2-class-6.png" /><img src="../imgs/t2-class-12.png" />
+        <p>This element has the class "name" and the ID "ben." Looking at the CSS we can see that font-size   is defined in both the class and  the ID, but because ID has precedence, the actual font size  displayed with be 30 pixels.</p>
+      </section>
+    </div>
+    <div class="sidebar">
+      <div class="recent-blog">
+        <h3>Recent Blog Posts</h3>
+        <ul>
+          <li><a href="t1-git-blog.html">My first post</a></li>
+          <li><a href="c1-chefs-kitchen.html">My second post</a></li>
+          <li><a href="t2-css-design.html">My third post</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </main>

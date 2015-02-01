@@ -7,28 +7,61 @@
 </head>
 
 <main>
-  <div>
-    <span class="top-button"><a href="../index.html">Home Page</a></span>
-    <span class="top-button"><a href="index.html">Blog Posts</a></span>
-  </div>
-  <div class="blogpost">
-    <h1>Arrays and Hashes:</h1>
-    <h2>When to and when not to</h2>
-    <h4>1/30/15</h4>
-
-    <section>
-      <p>This week during Deb Bootcamp, we learned about arrays, hashes, and how we can use them to store certain types of information. Arrays were something I knew about from prior programming work, but I had not been exposed to hashes as much.</p>
-      <p>An array is an ordered list of objects that is indexed by its place in the list. In Ruby, the indexing starts at 0, 1, 2, etc., which might be different that one would expect. This means that the first object in the array is stored in the 0th position, the second object is stored in the 1st position. Instead of having to remember where everything is in the list, you could programatically interate through the list and dispaly outputs.</p>
-      array1 = [1, 2, 3]
-    </section>
-  </div>
-  <div class="sidebar">
-    <h3>Recent Blog Posts</h3>
-    <ul>
-      <li><a href="t1-git-blog.html">My first post</a></li>
-      <li><a href="c1-chefs-kitchen.html">My second post</a></li>
-      <li><a href="t2-css-design.html">My third post</a></li>
-    </ul>
+  <div class="container">
+    <header>
+      <span class="top-button"><a href="../index.html">Home Page</a></span>
+      <span class="top-button"><a href="index.html">Blog Posts</a></span>
+    </header>
+    <div class="main-content">
+      <h1>Arrays and Hashes:</h1>
+      <h2>When to and when not to</h2>
+      <h4>1/30/15</h4>
+      <div class="">
+        <p>This week during Deb Bootcamp, we learned about arrays, hashes, and how we can use them to store certain types of information. Arrays  were something I knew about from prior programming work, but I had not been exposed to hashes as much. Herer is my take on what they are and how they can be used.</p>
+        <hr>
+        <h3>Arrays</h3>
+        <p>An array is an ordered list of objects that is indexed by its place in the list. In Ruby, the indexing starts at 0, 1, 2, etc., which  might be different that one would expect. This means that the first object in the array is stored in the position 0, the second object is stored in the position 1. Instead of having to remember where everything is in the list, you could programatically interate through  the list and dispaly outputs.</p>
+        <div class="ruby-code">
+          array1 = [1, 2, 3]
+          array1[0] = 1
+          array1[1] = 2
+          array1[2] = 3
+          array1[3] = nil
+        </div>
+        <p>The nil answer in the final example is ruby's equivalent of blank. It makes sense to use an array when you have a list of objects that are all the same type, like car makes, languages, or prime numbers:</p>
+        <div class="ruby-code">
+          cars = ["Honda", "Toyota", "Chevorlet", "Ford"]
+          languages = ["English", "Spanish", "Italian", "French"]
+          primes = [2, 3, 5, 7, 11, 13, 17]
+        </div>
+        <hr>
+        <h3>Hashes</h3>
+        <p>Hashes are a bit more complex and consist of key-value pairs. Instead of having the values in the hash indexed by numbers (like in an array), a key is used instead. The keys are flexible to fit the need of the hash. Let's take an example where you want to keep track of your friends' pet's names:
+        <div class="ruby-code">
+          friend-pets = {
+            "Alan" => "Spot"
+            "Bob" => "Bo"
+            "Calvin" => "Hobbes"
+          }
+        </div>
+        <p>Here we have our keys: the names of our friends, and the value: the names of their pets. Now that we have the data stored, we can perform look ups if we ever forget the pet name.
+        <div class="ruby-code">
+          puts friends-pets["Bob"]
+          > "Bo"
+        </div>
+        <p>This would not really be possible with an array unless you memorized which order you entered in the names, which does not really seem reasonable. This is the advantage of using a hash: you can create your own keys instead of relying on the integer index.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="recent-blog">
+        <h3>Recent Blog Posts</h3>
+        <ul>
+          <li><a href="t1-git-blog.html">My first post</a></li>
+          <li><a href="c1-chefs-kitchen.html">My second post</a></li>
+          <li><a href="t2-css-design.html">My third post</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </main>
 

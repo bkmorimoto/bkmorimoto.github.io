@@ -1,3 +1,7 @@
+.container {
+  width: 85%;
+  margin: 0px auto;
+}
 .top-button {
   border: 4px solid black;
   padding: 2px;
@@ -5,22 +9,42 @@
   margin-right: 20px;
 }
 .sidebar {
-  display: inline-block;
-  float: right;
-  margin-top: 80px;
-  border: 5px solid black;
-  border-radius: 5px;
-  width: 15%;
-  margin-right:30px;
-  padding: 5px;
-}
-.blogpost {
-  display: inline-block;
-  width: 75%;
-  border: 5px solid black;
-  border-radius: 5px;
+  display: inline;
+  position: absolute;
   margin-top: 20px;
+  margin-right: 5%;
+  margin-left: 3%;
+  width: 22%;
+
+}
+.recent-blog {
+  display: inline-block;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 100%;
+  margin: 0px auto;
+  padding-left: 10px;
+}
+.main-content {
+  display: inline-block;
+  width: 72%;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin: 20px auto;
   padding: 10px;
 }
-.bigspace {
+header {
+}
+.ruby-code {
+  font-family: consolas, courier, monospace;
+  font-size: .8em;
+  line-height: 1.2em;
+  white-space: pre; 
+  background-color: #ccf; /* any colour's okay, 
+  so long as it's different to the page-background  
+  (for ease of recognition) and contrast to the text */
+  color: #000; /* likewise the background-color comment */
+  border: 1px solid #666;
+  border-radius: 1em; /* just in case */
+  margin-top: 1.2em;
 }
