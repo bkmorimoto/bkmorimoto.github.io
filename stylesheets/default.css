@@ -1,16 +1,19 @@
 html {
-  background-color: #B3FFBB;
+  background-color: #D4D3C4;
   font-family: Geneva;
   font-size: 15px;
 }
 .home-header {
-  border: 3px solid black;
+  border: 2px solid red;
   height: 100px;
   text-align: center;
   margin-bottom: 10px;
 }
 .home-header > h1 {
-  margin: 0px auto 0px;
+  margin: 10px auto 0px;
+}
+.home-header > h3 {
+  margin-top: 5px
 }
 .social-media {
   right: 15px;
@@ -44,6 +47,9 @@ html {
 .home-img {
   text-align: center;
   margin: 15px;
+}
+.home-img > img {
+  border: 2px solid red;
 }
 .footer {
   font-size: 13px;
