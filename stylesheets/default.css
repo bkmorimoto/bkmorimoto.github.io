@@ -1,31 +1,21 @@
 html {
   background-color: #B3FFBB;
-  font-family: sans-serif;
+  font-family: Geneva;
+  font-size: 15px;
 }
-.head {
+.home-header {
   border: 3px solid black;
   height: 100px;
-  font-size: 35px;
   text-align: center;
+  margin-bottom: 10px;
 }
-.socmed {
+.home-header > h1 {
+  margin: 0px auto 0px;
+}
+.social-media {
+  right: 15px;
+  position: absolute;
   float: right;
-  margin-right: 10px;
-}
-.media {
-  margin: -3px;
-  height: 0px;
-}
-.subhead {
-  font-size: 15px;
-  margin-left: 104px;
-}
-.headtitle {
-  font-size: 35px;
-  margin-left: 108px;
-}
-img {
-  image
 }
 .myButton {
   box-shadow: 0px 10px 14px -7px #3e7327;
@@ -50,7 +40,6 @@ img {
 }
 #buttons {
   text-align: center;
-  padding-top: 10px;
 }
 .home-img {
   text-align: center;

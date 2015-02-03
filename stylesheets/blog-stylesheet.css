@@ -1,5 +1,5 @@
 .container {
-  width: 85%;
+  width: 90%;
   margin: 0px auto;
 }
 .top-button {
@@ -9,31 +9,55 @@
   margin-right: 20px;
 }
 .sidebar {
-  display: inline;
-  position: absolute;
+  float: left;
+  position: relative;
   margin-top: 20px;
-  margin-right: 5%;
-  margin-left: 3%;
-  width: 22%;
+  width: 20%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 1%;
+  border: 1px solid black;
 
 }
-.recent-blog {
-  display: inline-block;
-  border: 5px solid black;
-  border-radius: 5px;
-  width: 100%;
-  margin: 0px auto;
-  padding-left: 10px;
+.archive {
+  display: block;
+}
+.social-media-blog {
+  display: block;
+  float: center;
+  text-align: center;
 }
 .main-content {
-  display: inline-block;
-  width: 72%;
-  border: 5px solid black;
-  border-radius: 5px;
-  margin: 20px auto;
-  padding: 10px;
+  float: left;
+  position: relative;
+  width: 70%;
+  margin-top: 20px;
+  padding: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border: 1px solid black;
+  margin-bottom: 3%;
 }
 header {
+  font-family: Futura;
+  text-align: center;
+}
+#buttons {
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-top: 2px solid black;
+}
+ul {
+  margin-top: 10px;
+}
+li {
+  margin-bottom: 10px;
+  margin-left: -15px;
+}
+.sidebar > div > h3 {
+  text-align: center;
+  margin-bottom: 5px;
 }
 .ruby-code {
   font-family: consolas, courier, monospace;
