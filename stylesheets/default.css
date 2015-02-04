@@ -1,6 +1,11 @@
+@font-face {
+  font-family: ArnhemBlond;
+  src: url(../fonts/arnhem-blond.otf);
+
+}
 html {
   background-color: #D4D3C4;
-  font-family: Geneva;
+  font-family: ArnhemBlond,Georgia,"Times New Roman",serif;
   font-size: 15px;
 }
 .home-header {
