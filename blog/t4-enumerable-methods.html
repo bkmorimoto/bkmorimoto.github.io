@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+  <title>The BKM Experience</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+</head>
+
+<main>
+  <div class="container">
+    <header>
+      <h1>The BKM Experience</h1>
+    </header>
+    <form id="buttons">
+      <button type="submit" class="myButton" formaction="../index.html">Home</button>
+      <button type="submit" class="myButton" formaction="../aboutme.html">About Me</button>
+      <button type="submit" class="myButton" formaction="index.html">Blog</button>
+      <button type="submit" class="myButton" formaction="../projects/index.html">Projects</button>
+    </form>
+    <div class="main-content">
+      <h1>Let's See What Enumerable Methods Can Do</h1>
+      <h3>Enumerable#group_by</h3>
+      <h4>2/5/14</h4>
+      <div class="text-content">
+        <p>For this week's exploration of what Ruby has to offer us, I discuss enumerable methods, and more specifically Enumerable#group_by. I was not too familiar what enumerable was referencing until I started learning more and more about Ruby. The Enumerable mixin (as it is described on ruby docs) are a group of methods used to search and sort for "collection classes." The simplest of collection classes are ranges, arrays, and hashes, but a collection class can basically be described as a class where the method #each can be used to iterate through it.</p>
+        <p>Enumerable#group_by is a method that can take a collection and return a hash based on the results of a code block</p>
+        <div class="ruby-code">
+        Enumerable.group_by { |object| block } => result_hash
+        </div>
+        <p>Let's take an example where we are trying to sort an array of names by the length of each entry</p>
+        <div class="ruby-code">
+          cohort_arr <span class="ruby-operator">=</span> [<span class="ruby-string">'Alex M.'</span>, <span class="ruby-string">'Ben C.'</span>, <span class="ruby-string">'Ben M.'</span>, <span class="ruby-string">'Carl S.'</span>, <span class="ruby-string">'Charles G.'</span>, <span class="ruby-string">'Debbie M.'</span>, <span class="ruby-string">'Doraly P.'</span>, <span class="ruby-string">'Grant Z.'</span>,
+          <span class="ruby-string">'Greg C.'</span>, <span class="ruby-string">'Harry P.'</span>, <span class="ruby-string">'Kenneth G.'</span>, <span class="ruby-string">'Lucian K.'</span>, <span class="ruby-string">'Nicholas D.'</span>, <span class="ruby-string">'Ramon R.'</span>, <span class="ruby-string">'Sarena B.'</span>, <span class="ruby-string">'Vinh B.</span>]
+          cohort_arr.group_by { |name| name.length }
+            <span class="ruby-comment">#=> {7=>["Alex M.", "Carl S.", "Greg C.", "Vinh B."], 6=>["Ben C.", "Ben M."], 10=>["Charles G.", "Kenneth
+          G."], 9=>["Debbie M.", "Doraly P.", "Lucian K.", "Sarena B."], 8=>["Grant Z.", "Harry P.", "Ramon R."],
+          11=>["Nicholas D."]}</span>
+        </div>
+        <p>We are iterating through our array, cohort_arr. We call each entry object 'name' and are grouping by the name.length. The result is a hash where the keys are the results of name.length, and the values are the names, themselves.<br>Another example, if we wanted to sort by first letter of each name.</p>
+        <div class="ruby-code">
+          corhort_arr.group_by { |name| name[<span class="ruby-integer">0</span>] }
+            <span class="ruby-comment">#=> {"A"=>["Alex M."], "B"=>["Ben C.", "Ben M."], "C"=>["Carl S.", "Charles G."], "D"=>["Debbie M.",
+          "Doraly P."], "G"=>["Grant Z.", "Greg C."], "H"=>["Harry P."], "K"=>["Kenneth G."], "L"=>["Lucian K."],
+          "N"=>["Nicholas D."], "R"=>["Ramon R."], "S"=>["Sarena B."], "V"=>["Vinh B."]}</span>
+        </div>
+        <p>name[0] is what returns the first letter of the each object, and you can see in our resulting hash that we were able to group by the first letter of each name.</p>
+        <p>Both of these were fairly simple examples of what you can do with the group_by method, and I am sure that you can get more creative so it can be a more powerful tool. If you have any questions about it, feel free to tweet me @benmorimoto</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="social-media-blog">
+        <h3>Social</h3>
+        <span class="media"><a href="https://www.facebook.com/ben.morimoto.1"><img src="../imgs/facebook.png" alt="Facebook" /></a></span>
+        <span class="media"><a href="https://twitter.com/benmorimoto"><img src="../imgs/twitter.png" alt="Twitter" /></a></span>
+        <span class="media"><a href="https://github.com/bkmorimoto"><img src="../imgs/github.png" alt="GitHub" /></a></span>
+      </div>
+      <div class="archive">
+        <h3>Archive</h3>
+        <ul>
+          <li><a href="t4-enumerable-methods.html">Let's See What Enumerable Methods Can Do</a></li>
+          <li><a href="c3-thinking-style.html">My Take on My Own Thinking Style</a></li>
+          <li><a href="t3-arrays-hashes.html">Arrays and Hashes</a></li>
+          <li><a href="t2-css-design.html">When to Use Classes vs. IDs</a></li>
+          <li><a href="c1-chefs-kitchen.html">New Take on DBC</a></li>
+          <li><a href="t1-git-blog.html">Version Control, Git, GitHub and You</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
