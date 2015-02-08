@@ -82,3 +82,7 @@ li {
 .ruby-comment    { color: #5eff1f; font-weight: bold; background: transparent; }
 .ruby-regexp     { color: #ffa07a; background: transparent; }
 .ruby-value      { color: #7fffd4; background: transparent; }
+
+.italics {
+  font-style: italic;
+}
