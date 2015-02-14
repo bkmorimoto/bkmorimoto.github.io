@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+  <title>The BKM Experience</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+</head>
+
+<main>
+  <div class="container">
+    <header>
+      <h1>The BKM Experience</h1>
+    </header>
+    <form id="buttons">
+      <button type="submit" class="myButton" formaction="../index.html">Home</button>
+      <button type="submit" class="myButton" formaction="../aboutme.html">About Me</button>
+      <button type="submit" class="myButton" formaction="index.html">Blog</button>
+      <button type="submit" class="myButton" formaction="../projects/index.html">Projects</button>
+    </form>
+    <div class="main-content">
+      <h1>My Digital Shower - Learn about Ruby Classes</h1>
+      <h3>Some simple methods to program your shower</h3>
+      <h4>2/14/15</h4>
+      <div class="text-content">
+        <p>Today I am gonna start off with constructing my own Ruby class, define some instance variables, and some instance methods. The class is going to be a shower, and will make sure that it has some nifty features that you can play around with.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">class</span> Shower
+            <span class="ruby-operator">attr_accessor</span> <span class="ruby-integer">:temp</span>
+            <span class="ruby-operator">attr_reader</span> <span class="ruby-integer">:power</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">initialize</span>
+              @power <span class="ruby-operator">=</span> <span class="ruby-string">"off"</span>
+              @temp <span class="ruby-operator">=</span> <span class="ruby-integer">100</span>
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">power_button</span>
+              <span class="ruby-operator">if</span> @power <span class="ruby-operator">==</span> <span class="ruby-string">"off"</span>
+                @power <span class="ruby-operator">=</span> <span class="ruby-string">"on"</span>
+                <span class="ruby-operator">if</span> @saved_temp.nil? <span class="ruby-operator">==</span> <span class="ruby-integer">false</span>
+                  @temp <span class="ruby-operator">=</span> @saved_temp
+                <span class="ruby-operator">end</span>
+              <span class="ruby-operator">else</span>
+                @power <span class="ruby-operator">=</span> <span class="ruby-string">"off"</span>
+              <span class="ruby-operator">end</span>
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">inc_temp</span>
+              @temp <span class="ruby-operator">+=</span> <span class="ruby-integer">1</span>
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">dec_temp</span>
+              @temp <span class="ruby-operator">-=</span> <span class="ruby-integer">1</span>
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">save_temp</span>
+              @saved_temp <span class="ruby-operator">=</span> @temp
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+
+          my_shower <span class="ruby-operator">=</span> <span class="ruby-class">Shower</span>.<span class="ruby-operator">new</span>
+          my_shower.power_button            <span class="ruby-comment">#turning the shower on</span>
+          <span class="ruby-integer">10</span>.times { my_shower.inc_temp }   <span class="ruby-comment">#raise the temperature 10 degrees</span>
+          my_shower.temp                    <span class="ruby-comment">#display the temperature (should be at 110)</span>
+          my_shower.temp <span class="ruby-operator">=</span> <span class="ruby-integer">115</span>              <span class="ruby-comment">#set the temperature 115</span>
+          my_shower.save_temp               <span class="ruby-comment">#save this temperature for the next time you turn on your shower</span>
+          my_shower.power                   <span class="ruby-comment">#display whether the shower is on or off</span>
+          my_shower.power_button            <span class="ruby-comment">#turning off the shower</span>
+        </div>
+        <p>This is my class so far. I tried to represent what you can actually do  with the class and describe what would happen in the comments. First, the initialize method will actually get executed when a new Shower is created. I only do two things, make sure the power is set to off and set the default shower temperature to 100 degrees. You might notice that I have use @-symbols in front of the variable names: this is what we call an instance variable. Any instance variable can be used throughout the other class methods without having to be passed in. Briefly looking through the other methods, you can see that @power and @temp is referenced in multiple places. It is just an easy way to keep track of it from within the class.</p>
+        <p>I did skip over the initial calls in the class definition, because there is a little more too them. There are three versions of the attr definition: attr_reader, attr_writer, and attr_accessor. attr_reader will create a method that allows you to grab the instance variables written after it.
+        <div class="ruby-code">
+          <span class="ruby-operator">attr_reader</span> <span class="ruby-integer">:power</span>
+        </div>
+        <p>So we used it to create a method call power, that simply returns @power. The equivalent in code would be:</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">def</span> <span class="ruby-method">power</span>
+            @power
+          <span class="ruby-operator">end</span>
+        </div>
+        <p>But because we simply listed it as a attr_reader, we do not have to actually include this. Next, is the attr_writer, which instead of grabbing the variables, it creates a method that will allow you to set the variable.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">attr_writer</span> <span class="ruby-integer">:temp</span>
+
+          <span class="ruby-comment">#This is the equivalent method</span>
+          <span class="ruby-operator">def</span> <span class="ruby-method">temp=</span>(<span class="ruby-argument">temp</span>)
+            @temp <span class="ruby-operator">=</span> temp
+          <span class="ruby-operator">end</span>
+        </div>
+        <p>Lastly, attr_accessor is just the combination of both. In our class, we added temp as an attr_accessor so we could both get and set @temp. Using the attribute settings can save you some time when figuring out what methods you want to define.</p>
+        <p>I want to explain some of the features that I implemented (and they are pretty basic). When you call the power_button method, you can see that we check to see if there is a stored saved_temp. If there is, then the shower would automatically be set to that temp. The idea behind the inc/dec/save_temp methods is that there are corresponding buttons that would call each method. This allows someone to adjust the temperature to their liking, and then save it for the next time they shower. With the attr settings, we can display the temp and power, and also set the temperature directly (maybe via some keypad). I am sure this is the wave of the future, but really I was just having some fun.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="social-media-blog">
+        <h3>Social</h3>
+        <span class="media"><a href="https://www.facebook.com/ben.morimoto.1"><img src="../imgs/facebook.png" alt="Facebook" /></a></span>
+        <span class="media"><a href="https://twitter.com/benmorimoto"><img src="../imgs/twitter.png" alt="Twitter" /></a></span>
+        <span class="media"><a href="https://github.com/bkmorimoto"><img src="../imgs/github.png" alt="GitHub" /></a></span>
+      </div>
+      <div class="archive">
+        <h3>Archive</h3>
+        <ul>
+          <li><a href="c5-feedback.html">Some Feedback Inception</a></li>
+          <li><a href="t5-ruby-classes.html">My Digital Shower - Learn about Ruby Classes</a></li>
+          <li><a href="c4-tech-issues.html">Learning about Net Neutrality</a></li>
+          <li><a href="t4-enumerable-methods.html">Let's See What Enumerable Methods Can Do</a></li>
+          <li><a href="c3-thinking-style.html">My Take on My Own Thinking Style</a></li>
+          <li><a href="t3-arrays-hashes.html">Arrays and Hashes</a></li>
+          <li><a href="t2-css-design.html">When to Use Classes vs. IDs</a></li>
+          <li><a href="c1-chefs-kitchen.html">New Take on DBC</a></li>
+          <li><a href="t1-git-blog.html">Version Control, Git, GitHub and You</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+

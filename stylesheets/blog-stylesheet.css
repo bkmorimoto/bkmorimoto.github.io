@@ -75,11 +75,14 @@ li {
 /* @group Ruby keyword styles */
 .ruby-constant   { color: #7fffd4; background: transparent; }
 .ruby-keyword    { color: #00ffff; background: transparent; }
-.ruby-integer    { color: #C07DFF; background: transparent; }
-.ruby-operator   { color: #FF23A4; background: transparent; }
-.ruby-string     { color: #ffdead; background: transparent; }
-.ruby-node       { color: #ffa07a; background: transparent; }
-.ruby-comment    { color: #5eff1f; font-weight: bold; background: transparent; }
+.ruby-integer    { color: #ae81ff; background: transparent; }
+.ruby-operator   { color: #f9276c; background: transparent; }
+.ruby-string     { color: #e6db74; background: transparent; }
+.ruby-class      { color: #66d9e7; background: transparent; }
+.ruby-method     { color: #a6e22a; background: transparent; }
+.ruby-return     { color: #5eff1f; font-weight: bold; background: transparent; }
+.ruby-comment    { color: #75715a; background: transparent; }
+.ruby-argument   { color: #f59720; background: transparent; }
 .ruby-regexp     { color: #ffa07a; background: transparent; }
 .ruby-value      { color: #7fffd4; background: transparent; }
 

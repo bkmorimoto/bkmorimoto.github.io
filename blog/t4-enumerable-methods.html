@@ -32,14 +32,14 @@
           cohort_arr <span class="ruby-operator">=</span> [<span class="ruby-string">'Alex M.'</span>, <span class="ruby-string">'Ben C.'</span>, <span class="ruby-string">'Ben M.'</span>, <span class="ruby-string">'Carl S.'</span>, <span class="ruby-string">'Charles G.'</span>, <span class="ruby-string">'Debbie M.'</span>, <span class="ruby-string">'Doraly P.'</span>, <span class="ruby-string">'Grant Z.'</span>,
           <span class="ruby-string">'Greg C.'</span>, <span class="ruby-string">'Harry P.'</span>, <span class="ruby-string">'Kenneth G.'</span>, <span class="ruby-string">'Lucian K.'</span>, <span class="ruby-string">'Nicholas D.'</span>, <span class="ruby-string">'Ramon R.'</span>, <span class="ruby-string">'Sarena B.'</span>, <span class="ruby-string">'Vinh B.</span>]
           cohort_arr.group_by { |name| name.length }
-            <span class="ruby-comment">#=> {7=>["Alex M.", "Carl S.", "Greg C.", "Vinh B."], 6=>["Ben C.", "Ben M."], 10=>["Charles G.", "Kenneth
+            <span class="ruby-return">#=> {7=>["Alex M.", "Carl S.", "Greg C.", "Vinh B."], 6=>["Ben C.", "Ben M."], 10=>["Charles G.", "Kenneth
           G."], 9=>["Debbie M.", "Doraly P.", "Lucian K.", "Sarena B."], 8=>["Grant Z.", "Harry P.", "Ramon R."],
           11=>["Nicholas D."]}</span>
         </div>
         <p>We are iterating through our array, cohort_arr. We call each entry object 'name' and are grouping by the name.length. The result is a hash where the keys are the results of name.length, and the values are the names, themselves.<br>Another example, if we wanted to sort by first letter of each name.</p>
         <div class="ruby-code">
           corhort_arr.group_by { |name| name[<span class="ruby-integer">0</span>] }
-            <span class="ruby-comment">#=> {"A"=>["Alex M."], "B"=>["Ben C.", "Ben M."], "C"=>["Carl S.", "Charles G."], "D"=>["Debbie M.",
+            <span class="ruby-return">#=> {"A"=>["Alex M."], "B"=>["Ben C.", "Ben M."], "C"=>["Carl S.", "Charles G."], "D"=>["Debbie M.",
           "Doraly P."], "G"=>["Grant Z.", "Greg C."], "H"=>["Harry P."], "K"=>["Kenneth G."], "L"=>["Lucian K."],
           "N"=>["Nicholas D."], "R"=>["Ramon R."], "S"=>["Sarena B."], "V"=>["Vinh B."]}</span>
         </div>
@@ -57,6 +57,8 @@
       <div class="archive">
         <h3>Archive</h3>
         <ul>
+          <li><a href="c5-feedback.html">Some Feedback Inception</a></li>
+          <li><a href="t5-ruby-classes.html">My Digital Shower - Learn about Ruby Classes</a></li>
           <li><a href="c4-tech-issues.html">Learning about Net Neutrality</a></li>
           <li><a href="t4-enumerable-methods.html">Let's See What Enumerable Methods Can Do</a></li>
           <li><a href="c3-thinking-style.html">My Take on My Own Thinking Style</a></li>
