@@ -22,7 +22,7 @@
       <h3>Some simple methods to program your shower</h3>
       <h4>2/14/15</h4>
       <div class="text-content">
-        <p>Today I am gonna start off with constructing my own Ruby class, define some instance variables, and some instance methods. The class is going to be a shower, and will make sure that it has some nifty features that you can play around with.</p>
+        <p>Today I am gonna start off with constructing my own Ruby class, define some instance variables, and some instance methods. The class is going to be a shower, and I will make sure that it has some nifty features that we can play around with.</p>
         <div class="ruby-code">
           <span class="ruby-operator">class</span> Shower
             <span class="ruby-operator">attr_accessor</span> <span class="ruby-integer">:temp</span>
@@ -67,8 +67,8 @@
           my_shower.power                   <span class="ruby-comment">#display whether the shower is on or off</span>
           my_shower.power_button            <span class="ruby-comment">#turning off the shower</span>
         </div>
-        <p>This is my class so far. I tried to represent what you can actually do  with the class and describe what would happen in the comments. First, the initialize method will actually get executed when a new Shower is created. I only do two things, make sure the power is set to off and set the default shower temperature to 100 degrees. You might notice that I have use @-symbols in front of the variable names: this is what we call an instance variable. Any instance variable can be used throughout the other class methods without having to be passed in. Briefly looking through the other methods, you can see that @power and @temp is referenced in multiple places. It is just an easy way to keep track of it from within the class.</p>
-        <p>I did skip over the initial calls in the class definition, because there is a little more too them. There are three versions of the attr definition: attr_reader, attr_writer, and attr_accessor. attr_reader will create a method that allows you to grab the instance variables written after it.
+        <p>This is my class so far. I tried to represent what you can actually do with the class and describe what would happen in the comments. First, the initialize method will actually get executed when a new Shower is created. I only do two things, make sure the power is set to off and set the default shower temperature to 100 degrees. You might notice that I have use @-symbols in front of the variable names: this is what we call an instance variable. Any instance variable can be used throughout the other class methods without having to be passed in. Briefly looking through the other methods, you can see that @power and @temp is referenced in multiple places. It is just an easy way to keep track of them from within the class.</p>
+        <p>I did skip over the initial calls in the class definition, because there is a little more to them. There are three versions of the attr definition: attr_reader, attr_writer, and attr_accessor. attr_reader will create a method that allows you to grab the instance variables written after it.
         <div class="ruby-code">
           <span class="ruby-operator">attr_reader</span> <span class="ruby-integer">:power</span>
         </div>
@@ -78,7 +78,7 @@
             @power
           <span class="ruby-operator">end</span>
         </div>
-        <p>But because we simply listed it as a attr_reader, we do not have to actually include this. Next, is the attr_writer, which instead of grabbing the variables, it creates a method that will allow you to set the variable.</p>
+        <p>But because we simply listed it as a attr_reader, we do not have to actually include this. Next, is the attr_writer, which instead of grabbing the variables like _reader, it creates a method that will allow you to set the variable.</p>
         <div class="ruby-code">
           <span class="ruby-operator">attr_writer</span> <span class="ruby-integer">:temp</span>
 
@@ -88,7 +88,7 @@
           <span class="ruby-operator">end</span>
         </div>
         <p>Lastly, attr_accessor is just the combination of both. In our class, we added temp as an attr_accessor so we could both get and set @temp. Using the attribute settings can save you some time when figuring out what methods you want to define.</p>
-        <p>I want to explain some of the features that I implemented (and they are pretty basic). When you call the power_button method, you can see that we check to see if there is a stored saved_temp. If there is, then the shower would automatically be set to that temp. The idea behind the inc/dec/save_temp methods is that there are corresponding buttons that would call each method. This allows someone to adjust the temperature to their liking, and then save it for the next time they shower. With the attr settings, we can display the temp and power, and also set the temperature directly (maybe via some keypad). I am sure this is the wave of the future, but really I was just having some fun.</p>
+        <p>I want to explain some of the features that I implemented (and they are pretty basic). When you call the power_button method, you can see that we check to see if there is a stored saved_temp. If there is, then the shower would automatically be set to that temperature. The idea behind the inc/dec/save_temp methods is that there are corresponding buttons that would call each method. This allows someone to adjust the temperature to their liking, and then save it for the next time they turn on the shower. With the attr settings, we can display the temp and power, and also set the temp directly (maybe via some keypad). I am not quite sure that this is the wave of the future, but I had some fun creating it.</p>
       </div>
     </div>
     <div class="sidebar">
