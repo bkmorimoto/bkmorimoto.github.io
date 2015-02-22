@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<head>
+  <title>The BKM Experience</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+</head>
+
+<main>
+  <div class="container">
+    <header>
+      <h1>The BKM Experience</h1>
+    </header>
+    <form id="buttons">
+      <button type="submit" class="myButton" formaction="../index.html">Home</button>
+      <button type="submit" class="myButton" formaction="../aboutme.html">About Me</button>
+      <button type="submit" class="myButton" formaction="index.html">Blog</button>
+      <button type="submit" class="myButton" formaction="../projects/index.html">Projects</button>
+    </form>
+    <div class="main-content">
+      <h1>Ruby: How to Use Inheritance vs. Composition</h1>
+      <h3>Decisions to be made</h3>
+      <h4>2/22/15</h4>
+      <div class="text-content">
+        <p>The dive into ruby classes continues as we learn about some of the inherent properties of ruby classes and how you can use them to design a better program. Ruby is structured in such a way to limit the amount of re-coding that actually needs to be done when building new classes. If you create a new class (child) from an existing class (parent), there are two main ways to make the parent methods available to the child class without too much work. One is inheritance and the other is composition. I will first start with inheritance, include some examples, and then move onto composition.</p>
+        <h3>Inheritance</h3>
+        <p>As I mentioned before, ruby was created to make it easy for us programmers to do what we need to do. When we want to create a new class, we can inherit the library of parent methods if coded properly. That way, we do not have to re-code these methods in our new class if that is what we want.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">class</span> Parent
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">display</span>
+              puts <span class="ruby-string">"I am the parent"</span>
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">class</span> Child <span class="ruby-method">< Parent</span>
+          <span class="ruby-operator">end</span>
+
+          jim <span class="ruby-operator">=</span> <span class="ruby-class">Parent</span>.<span class="ruby-operator">new</span>
+          jimmy_jr <span class="ruby-operator">=</span> <span class="ruby-class">Child</span>.<span class="ruby-operator">new</span>
+
+          jim.display
+          jimmy_jr.display
+        </div>
+        <p>Here we are simply defining our Parent class, which happens to be the parent, and our Child class, which is the child. Only one method is defined, and it is in the parent class; but we try to call jimmy_jr.display, so what will happen? If you run this code, the output would look something like this:</p>
+        <div class="ruby-code">
+          "I am the parent"
+          "I am the parent"
+        </div>
+        <p>The first line is from calling jim.display. The second line is from calling jimmy_jr.display. As you can see, even though the display method is not defined in the child class, it actually inherits it from the parent class. Using the Child < Parent notation creates this link, and then you can use any of the parent methods with the child class. But now there is some concern because our display method outputs something that is not necessarily true with our child class. How do we get around this? If we want to change what the display method calls for the child class, then we need to define a different display method within the child class.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">class</span> Parent
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">display</span>
+              puts <span class="ruby-string">"I am the parent"</span>
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">class</span> Child <span class="ruby-method">< Parent</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">display</span>
+              ans <span class="ruby-operator">=</span> <span class="ruby-integer">1</span> <span class="ruby-operator">+</span> <span class="ruby-integer">2</span>
+              puts <span class="ruby-string">"The answer is #{ans}"</span>
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+
+          jim <span class="ruby-operator">=</span> <span class="ruby-class">Parent</span>.<span class="ruby-operator">new</span>
+          jimmy_jr <span class="ruby-operator">=</span> <span class="ruby-class">Child</span>.<span class="ruby-operator">new</span>
+
+          jim.display
+          jimmy_jr.display
+        </div>
+        <p>Now, our output will look a little different. When jimmy_jr.display gets called, we first look to see if display is defined at the child-level, and this time we actually find it. At this point, we are no longer inheriting from the parent class even though there is a Parent.display also defined.</p>
+        <div class="ruby-code">
+          "I am the parent"
+          "The answer is 3"
+        </div>
+        <p>So with some quick examples, we can see how inheritance between classes work and how to break that inheritance. Again, it is designed this way to reduce the amount of work that is needed when building a new class.</p>
+        <h3>Composition</h3>
+        <p>Another path that can be taken to minimize duplicate work is to design the child classes in such a way that you are actually defining the child class as a "class-of-a-class" within the initialize method. This is known as composition. Doing it this way, there is no longer a parent involved, so let us change our classes around a bit.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">class</span> Big_brother
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">taunt</span>
+              puts <span class="ruby-string">"I am definitely the favorite"</span>
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">fight</span>
+              puts <span class="ruby-string">"I will win because I am bigger and stronger"</span>
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">class</span> Little_brother
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">initialize</span>
+              @bro <span class="ruby-operator">=</span> <span class="ruby-class">Big_brother</span>.<span class="ruby-operator">new</span>
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">taunt</span>
+              @bro.taunt
+            <span class="ruby-operator">end</span>
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">fight</span>
+              puts <span class="ruby-string">"I will win because I am smaller and faster"</span>
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+
+          ryan <span class="ruby-operator">=</span> <span class="ruby-class">Big_brother</span>.<span class="ruby-operator">new</span>
+          ben <span class="ruby-operator">=</span> <span class="ruby-class">Little_brother</span>.<span class="ruby-operator">new</span>
+
+          ryan.taunt
+          ben.taunt
+          ryan.fight
+          ben.fight
+        </div>
+        <p>I did some combining to go over both situations that I did in the inheritance way of doing things. First, I would like to point out the different of notation to link the two classes. Instead of the Little_brother class being a direct descendant of Big_brother, we create an instance of Big_brother in the initialize method of Little_brother. This is the step where we now have access to all the methods of Big_brother in Little_brother. Let us look at the output:
+        <div class="ruby-code">
+          "I am definitely the favorite"
+          "I am definitely the favorite"
+          "I will win because I am bigger and stronger"
+          "I will win because I am smaller and faster"
+        </div>
+        <p>The taunt method in Little_brother can then just be called from our instance of @bro, which is where it is actually defined. For the fight method, it is defined in each class so we get the class-specific output. I will also present an alternate method of linking Little_brother to Big_brother that will yield the same exact results.<p>
+        <div class="ruby-code">
+          <span class="ruby-operator">class</span> Little_brother
+            <span class="ruby-operator">include</span> Big_brother
+
+            <span class="ruby-operator">def</span> <span class="ruby-method">fight</span>
+              puts <span class="ruby-string">"I will win because I am smaller and faster"</span>
+            <span class="ruby-operator">end</span>
+
+          <span class="ruby-operator">end</span>
+        </div>
+        <p>Overall, I have not been exposed too much to either of these ways to be a more efficient coder, but I am glad since it will be something I will now be able to take advantage of when the situation presents itself. I tried to do some research on when to use one over the other, but it is left rather open-ended. It seems to be just style preferences, but I did get some insight:<p>
+        <ul>
+          <li>Inheritance: If there is a common theme of the classes that are being created.</li>
+          <li>Composition: When there are pieces of code that you want to bring together, but are not necessarily related to each other.</li>
+        </ul>
+        <p>I am still not sure if I have a preference, but we will see what comes to my mind first when I am forced to tackle these kinds of situations.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="social-media-blog">
+        <h3>Social</h3>
+        <span class="media"><a href="https://www.facebook.com/ben.morimoto.1"><img src="../imgs/facebook.png" alt="Facebook" /></a></span>
+        <span class="media"><a href="https://twitter.com/benmorimoto"><img src="../imgs/twitter.png" alt="Twitter" /></a></span>
+        <span class="media"><a href="https://github.com/bkmorimoto"><img src="../imgs/github.png" alt="GitHub" /></a></span>
+      </div>
+      <div class="archive">
+        <h3>Archive</h3>
+        <ul>
+          <li><a href="c6-stereotype-threat.html">Breaking the Mold</a></li>
+          <li><a href="t6-oop-concepts.html">Ruby: How to Use Inheritance vs. Composition</a></li>
+          <li><a href="c5-feedback.html">Some Feedback Inception</a></li>
+          <li><a href="t5-ruby-classes.html">My Digital Shower - Learn about Ruby Classes</a></li>
+          <li><a href="c4-tech-issues.html">Learning about Net Neutrality</a></li>
+          <li><a href="t4-enumerable-methods.html">Let's See What Enumerable Methods Can Do</a></li>
+          <li><a href="c3-thinking-style.html">My Take on My Own Thinking Style</a></li>
+          <li><a href="t3-arrays-hashes.html">Arrays and Hashes</a></li>
+          <li><a href="t2-css-design.html">When to Use Classes vs. IDs</a></li>
+          <li><a href="c1-chefs-kitchen.html">New Take on DBC</a></li>
+          <li><a href="t1-git-blog.html">Version Control, Git, GitHub and You</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
