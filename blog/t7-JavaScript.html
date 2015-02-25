@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <title>The BKM Experience</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+</head>
+
+<main>
+  <div class="container">
+    <header>
+      <h1>The BKM Experience</h1>
+    </header>
+    <form id="buttons">
+      <button type="submit" class="myButton" formaction="../index.html">Home</button>
+      <button type="submit" class="myButton" formaction="../aboutme.html">About Me</button>
+      <button type="submit" class="myButton" formaction="index.html">Blog</button>
+      <button type="submit" class="myButton" formaction="../projects/index.html">Projects</button>
+    </form>
+    <div class="main-content">
+      <h1>Loops vs. Loops: Comparing JavaScript and Ruby</h1>
+      <h3>Analyzing the differences between the languages</h3>
+      <h4>2/25/14</h4>
+      <div class="text-content">
+        <p>During this week's curriculum, we were introduced to JavaScript. I have seen and worked with JavaScript a little bit before, but I have not really attempted to learn it. I just tried to use my previous programming/language knowledge to carry me through. It is refreshing to actually sit down, read, and learn the language properly.</p>
+        <p>Coming out of learning Ruby in DBC, JavaScript is a bit different, and I feel that it requires more understanding of the language in order to accomplish similar tasks than if you were using Ruby. Learning about how to create simple loops in JavaScript was not shocking, but definitely different than Ruby.</p>
+        <p>JavaScript takes a more traditional syntax approach to looping from some of the other languages I have dabbled in before. The 'for' loop structure is very distinct, and, I would assume, sees more use than the 'for' loop structure in Ruby. For example, let us compare the intuitive way to iterate through an array in both languages.</p>
+        <h4>JavaScript</h4>
+        <div class="js-code">
+          <span class="js-function">var</span> array <span class="js-operator">=</span> [<span class="js-integer">1</span>, <span class="js-integer">2</span>, <span class="js-string">"cheese"</span>, <span class="js-integer">true</span>];
+          <span class="js-operator">for</span> (<span class="js-function">var</span> i <span class="js-operator">=</span> <span class="js-integer">0</span>; i <span class="js-operator"><</span> array.<span class="js-function">length</span>; i<span class="js-operator">++</span>) {
+            console<span class="js-function">.log</span>(array[i]);
+          }
+
+          <span class="js-return">//=>
+          1
+          2
+          "cheese"
+          true</span>
+        </div>
+        <h4>Ruby</h4>
+        <div class="ruby-code">
+          array <span class="ruby-operator">=</span> [<span class="ruby-integer">1</span>, <span class="ruby-integer">2</span>, <span class="ruby-string">"cheese"</span>, <span class="ruby-integer">true</span>]
+          array.each { |i| p i }
+
+          <span class="ruby-return">#=>
+          1
+          2
+          "cheese"
+          true</span>
+        </div>
+        <p>The first thing to notice is that the JavaScript process has a lot more keystrokes. But, if coming from most other languages, the format is familiar. When declaring the 'for' loop, we define the starting interator (var i = 0), the condition that must be to continue looping (i < array.length), and our change to the iterator (i++ or i += 1 if you are not familiar with the notation). We then open up the code block and preform our stuff to be looped. When we compare this to Ruby, we do not even use a 'for' loop. Ruby already has array methods that take care of this common scenario of iterating through each element of the array, so we kind of skip over the part where we create a 'for' loop. One of these is the each method, where we declare our element object (i), and that will store the current element as the loop executes. This tends to be true for a lot of the data structures in Ruby: there often exists methods to loop through them for you, so you do not have to create some kind of "manual" loop like we do in JavaScript. Both languages can get the job done, but you have to get used to the available tools in each.</p>
+        <p>On the other hand, the 'while' loop structure between the languages are very similar, so that's nice.</p>
+        <h4>JavaScript</h4>
+        <div class="js-code">
+          <span class="js-function">var</span> i <span class="js-operator">=</span> <span class="js-integer">0</span>;
+          <span class="js-operator">while</span> (i <span class="js-operator"><</span> <span class="js-integer">5</span>) {
+            console<span class="js-function">.log</span>(i);
+            i<span class="js-operator">++</span>;
+          }
+
+          <span class="js-return">//=>
+          0
+          1
+          2
+          3
+          4
+        </div>
+        <h4>Ruby</h4>
+        <div class="ruby-code">
+          i <span class="ruby-operator">=</span> <span class="ruby-integer">0</span>
+          <span class="ruby-operator">while</span> i <span class="ruby-operator"><</span> <span class="ruby-integer">5</span> do
+            p i
+            i <span class="js-operator">+=</span> <span class="ruby-integer">1</span>
+          <span class="ruby-operator">end</span>
+
+          <span class="ruby-return">#=>
+          0
+          1
+          2
+          3
+          4
+        </div>
+        </div>
+        <p>I feel that JavaScript is more of a brute force language when you want to loop through things, and Ruby...well in Ruby you actually have to find the right method to use when you want to loop (and it can be tough at times). In the long run, Ruby will probably be more efficient from a coding stand point, but it is also valuable to learn the traditional looping syntax from languages like JavaScript.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="social-media-blog">
+        <h3>Social</h3>
+        <span class="media"><a href="https://www.facebook.com/ben.morimoto.1"><img src="../imgs/facebook.png" alt="Facebook" /></a></span>
+        <span class="media"><a href="https://twitter.com/benmorimoto"><img src="../imgs/twitter.png" alt="Twitter" /></a></span>
+        <span class="media"><a href="https://github.com/bkmorimoto"><img src="../imgs/github.png" alt="GitHub" /></a></span>
+      </div>
+      <div class="archive">
+        <h3>Archive</h3>
+        <ul>
+          <li><a href="c7-values.html">A Sneak Peak of What I Value</a></li>
+          <li><a href="t7-JavaScript.html">Loops vs. Loops: Comparing JavaScript and Ruby</a></li>
+          <li><a href="c6-stereotype-threat.html">Breaking the Mold</a></li>
+          <li><a href="t6-oop-concepts.html">Ruby: How to Use Inheritance vs. Composition</a></li>
+          <li><a href="c5-feedback.html">Some Feedback Inception</a></li>
+          <li><a href="t5-ruby-classes.html">My Digital Shower - Learn about Ruby Classes</a></li>
+          <li><a href="c4-tech-issues.html">Learning about Net Neutrality</a></li>
+          <li><a href="t4-enumerable-methods.html">Let's See What Enumerable Methods Can Do</a></li>
+          <li><a href="c3-thinking-style.html">My Take on My Own Thinking Style</a></li>
+          <li><a href="t3-arrays-hashes.html">Arrays and Hashes</a></li>
+          <li><a href="t2-css-design.html">When to Use Classes vs. IDs</a></li>
+          <li><a href="c1-chefs-kitchen.html">New Take on DBC</a></li>
+          <li><a href="t1-git-blog.html">Version Control, Git, GitHub and You</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
