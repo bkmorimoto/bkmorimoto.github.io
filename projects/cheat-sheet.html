@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ruby Cheatsheet</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet-stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Ruby Hashes, Arrays, Strings, & Integers Cheatsheet</h1>
+    </header>
+    <form id="buttons">
+      <button type="submit" class="myButton" formaction="../index.html">Home</button>
+      <button type="submit" class="myButton" formaction="../aboutme.html">About Me</button>
+      <button type="submit" class="myButton" formaction="../blog/index.html">Blog</button>
+      <button type="submit" class="myButton" formaction="index.html">Projects</button>
+    </form>
+    <main class="main-content">
+      <div class="ruby-object">
+        <h2>Ruby Hashes</h2>
+        <p>A Hash is a dictionary-like collection of unique keys and their values. Also called associative arrays, they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type.<br>Hashes enumerate their values in the order that the corresponding keys were inserted.</p>
+        <div class="method-desc">
+          <h4>#each, #each_key, #each_value</h4>
+          <p>We use the #each method to iterate through hashes. #each_pair is actually the same method as #each, just with a different name. There are also other versions to iterate more specifically: #each_key to iterate through keys of the hash, and #each_value to iterate through the values of the hash.</p>
+          <pre>
+            h <span class="ruby-operator">=</span> { <span class="ruby-string">"a"</span> => <span class="ruby-integer">100</span>, <span class="ruby-string">"b"</span> => <span class="ruby-integer">200</span> }
+            h.each {|key, value| puts <span class="ruby-string">"#{key} is #{value}"</span> }
+            
+            h.each_key {|key| puts <span class="ruby-string">"{#key}--"</span> }
+            
+            h.each_value {|value| puts <span class="ruby-string">"--{#value}"</span> }
+          </pre>
+          <p>This is the output:</p>
+          <pre>
+            <span class="ruby-return">#each
+            a is 100
+            b is 200
+            
+            #each_key
+            a--b--
+            
+            #each_value
+            --100-200</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#has_key?, #has_value?</h4>
+          <p>There are two methods used to find if keys or values are contained within the has. Both the #has_key? and #has_value? methods return true if the key or value is present the hash, respectively.</p>
+          <pre>
+            h <span class="ruby-operator">=</span> { <span class="ruby-string">"a"</span> => <span class="ruby-integer">100</span>, <span class="ruby-string">"b"</span> => <span class="ruby-integer">200</span> }
+            h.has_key?(<span class="ruby-string">"a"</span>)     <span class="ruby-return">#=> true</span>
+            h_has_key?(<span class="ruby-string">"c"</span>)     <span class="ruby-return">#=> false</span>
+            h.has_value?(<span class="ruby-integer">200</span>)   <span class="ruby-return">#=> true</span>
+            h.has_value?(<span class="ruby-integer">300</span>)   <span class="ruby-return">#=> false</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#select</h4>
+          <p>#select returns a new hash consisting of entries for which the block returns true.</p>
+          <pre>
+            h <span class="ruby-operator">=</span> { <span class="ruby-string">"a"</span> => <span class="ruby-integer">100</span>, <span class="ruby-string">"b"</span> => <span class="ruby-integer">200</span>, <span class="ruby-string">"c"</span> => <span class="ruby-integer">300</span> }
+            h.select {|k,v| k <span class="ruby-operator">></span> <span class="ruby-string">"a"</span>}  <span class="ruby-return">#=> {"b" => 200, "c" => 300}</span>
+            h.select {|k,v| v <span class="ruby-operator"><</span> <span class="ruby-integer">200</span>}  <span class="ruby-return">#=> {"a" => 100}</span>
+          </pre>
+        </div>
+      </div>
+      <div class="ruby-object">
+        <h2>Ruby Arrays</h2>
+        <p>Arrays are ordered, integer-indexed collections of any object.<br>Array indexing starts at 0, as in C or Java. A negative index is assumed to be relative to the end of the array---that is, an index of -1 indicates the last element of the array, -2 is the next to last element in the array, and so on.</p>
+        <div class="method-desc">
+          <h4>#each</h4>
+          <p>We use the #each method to iterate through hashes.</p>
+          <pre>
+            a <span class="ruby-operator">=</span> [ <span class="ruby-string">"a"</span>, <span class="ruby-string">"b"</span>, <span class="ruby-string">"c"</span> ]
+            a.each {|x| print x, <span class="ruby-string">" -- "</span> } <span class="ruby-return">#=> a -- b -- c --</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#include?</h4>
+          <p>Returns true if the argument exists in the array.</p>
+          <pre>
+            a <span class="ruby-operator">=</span> [ <span class="ruby-string">"a"</span>, <span class="ruby-string">"b"</span>, <span class="ruby-string">"c"</span> ]
+            a.include?(<span class="ruby-string">"b"</span>)   <span class="ruby-return">#=> true</span>
+            a.include?(<span class="ruby-string">"z"</span>)   <span class="ruby-return">#=> false</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#delete_if</h4>
+          <p>Deletes every element in the array for which the block evaluates as true. The array is changed instantly every time the block is called, not after the iteration is over.</p>
+          <pre>
+            scores <span class="ruby-operator">=</span> [ <span class="ruby-integer">97</span>, <span class="ruby-integer">42</span>, <span class="ruby-integer">75</span> ]
+            scores.delete_if {|score| score <span class="ruby-operator"><</span> <span class="ruby-integer">80</span> }   <span class="ruby-return">#=> [97]</span>
+          </pre>
+        </div>
+      </div>    
+      <div class="ruby-object">
+        <h2>Ruby Strings</h2>
+        <p>A String object holds and manipulates an arbitrary sequence of bytes, typically representing characters. String objects may be created using String::new or as literals.<br>Because of aliasing issues, users of strings should be aware of the methods that modify the contents of a String object. Typically, methods with names ending in “!” modify their receiver, while those without a “!” return a new String. However, there are exceptions, such as String#[]=.</p>
+        <div class="method-desc">
+          <h4>#capitalize</h4>
+          <p>This method will capitalize the first letter of the string and make everything else lowercase.</p>
+          <pre>
+            <span class="ruby-string">"hello"</span>.capitalize    <span class="ruby-return">#=> "Hello"</span>
+            <span class="ruby-string">"HELLO"</span>.capitalize    <span class="ruby-return">#=> "Hello"</span>
+            <span class="ruby-string">"123ABC"</span>.capitalize   <span class="ruby-return">#=> "123abc"</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#include?</h4>
+          <p>Returns true if the string contains the given string or character.</p>
+          <pre>
+            <span class="ruby-string">"hello"</span>.include? <span class="ruby-string">"lo"</span>   <span class="ruby-return">#=> true</span>
+            <span class="ruby-string">"hello"</span>.include? <span class="ruby-string">"ol"</span>   <span class="ruby-return">#=> false</span>
+            <span class="ruby-string">"hello"</span>.include? <span class="ruby-integer">?h</span>     <span class="ruby-return">#=> true</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#length</h4>
+          <p>Returns the character length of the string as an integer.</p>
+          <pre>
+            <span class="ruby-string">"hello"</span>.length <span class="ruby-return">#=> 5</span>
+          </pre>
+        </div>   
+      </div>
+      <div class="ruby-object">
+      <h2>Ruby Integers</h2>
+        <p>This class is the basis for the two concrete classes that hold whole numbers, Bignum and Fixnum.</p>
+        <div class="method-desc">
+          <h4>#even?, #odd?</h4>
+          <p>Both these methods can be used to find whether the integer is even or odd and returns true or false.</p>
+          <pre>
+            <span class="ruby-integer">1</span>.even?   <span class="ruby-return">#=> false</span>
+            <span class="ruby-integer">1</span>.odd?    <span class="ruby-return">#=> true</span>
+            <span class="ruby-integer">2</span>.even?   <span class="ruby-return">#=> true</span>
+            <span class="ruby-integer">2</span>.odd?    <span class="ruby-return">#=> false</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#next</h4>
+          <p>Returns the integer equal to integer + 1.</p>
+          <pre>
+            <span class="ruby-integer">1</span>.next        <span class="ruby-return">#=> 2</span>
+            <span class="ruby-integer">1</span>.next.next   <span class="ruby-return">#=> 3</span>
+          </pre>
+        </div>
+        <div class="method-desc">
+          <h4>#times</h4>
+          <p>Iterates the given block an i amount of times, passing in values from zero to i - 1 </p>
+          <pre>
+            <span class="ruby-integer">5</span>.times <span class="ruby-operator">do</span> |i|
+              print i <span class="ruby-operator">+</span> <span class="ruby-string">" "</span>
+            <span class="ruby-operator">end</span>
+            <span class="ruby-return">#=> 0 1 2 3 4</span>
+          </pre>
+        </div> 
+      </div>
+    </main>
+  </body>
+</html>
