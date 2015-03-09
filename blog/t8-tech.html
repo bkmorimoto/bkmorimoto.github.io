@@ -18,11 +18,54 @@
       <button type="submit" class="myButton" formaction="../projects/index.html">Projects</button>
     </form>
     <div class="main-content">
-      <h1><!-- Title --></h1>
-      <h3><!-- Subtitle --></h3>
-      <h4><!-- Date--></h4>
+      <h1>The Big O: Measuring Algorithms</h1>
+      <h3>Not be confused with the giant robot</h3>
+      <h4>3/8/15</h4>
       <div class="text-content">
-        <!--Add content here -->
+        <p>This week the tech blog was more open-ended, so we got to choose a topic to research and explain at a high level. I chose to find out more about big O notation and complexity. I have done some reading in the past that covered the topic, so I do have some foundation, but I wanted to dig a little deeper. Big O notation is used to measure algorithms by how they respond to changes in input size. It is used for the worst case scenario of the running time of an algorithm. For a problem size N, here is how we would express a few examples in big O notation:</p>
+        <ul>
+          <li>a constant-time method is "order 1": O(1)</li>
+          <li>a linear-time method is "order N": O(N)</li>
+          <li>a quadratic-time method is "order N squared": O(N<sup>2</sup>)</li>
+        </ul>
+        <h3>O(1)</h3>
+        <p>A constant time method will always execute in the same time no matter what the size of the input data.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">def</span> <span class="ruby-method">array_search</span>(<span class="ruby-argument">array</span>)
+            <span class="ruby-operator">if</span> array[<span class="ruby-integer">0</span>].nil?
+              <span class="ruby-operator">return</span> <span class="ruby-integer">true</span> 
+            <span class="ruby-operator">else</span>
+              <span class="ruby-operator">return</span> <span class="ruby-integer">false</span>
+            <span class="ruby-operator">end</span>
+          <span class="ruby-operator">end</span>
+        </div>
+        <h3>O(N)</h3>
+        <p>A linear time method algorithm's performance will grow linearly and in direct proportion to the size of input data. It is always measured on the terms of the worst case scenario. Even in cases where a search could potentially end faster, it is not considered with big O complexity.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">def</span> <span class="ruby-method">find_array</span>(<span class="ruby-argument">array</span>, <span class="ruby-argument">str</span>)
+            array.each <span class="ruby-operator">do</span> |element|
+              <span class="ruby-operator">if</span> element <span class="ruby-operator">==</span> str
+                <span class="ruby-operator">return</span> <span class="ruby-integer">true</span>
+              <span class="ruby-operator">end</span>
+            <span class="ruby-operator">end</span>
+            <span class="ruby-operator">return</span> <span class="ruby-integer">false</span>
+          <span class="ruby-operator">end</span>
+        </div>
+        <h3>O(N<sup>2</sup>)</h3>
+        <p>A quadratic time method algorithm's performance is directly proportional to the square of the size of the input data. This is often the result of nested loops, and as you go deeper the performance increases by a power.</p>
+        <div class="ruby-code">
+          <span class="ruby-operator">def</span> <span class="ruby-method">find_duplicate</span>(<span class="ruby-argument">array</span>)
+            array.each_with_index <span class="ruby-operator">do</span> |element_i, idx_i|
+              array.each _with_index <span class="ruby-operator">do</span> |element_j, idx_j|
+                <span class="ruby-operator">if</span> (idx_i <span class="ruby-operator">!=</span> idx_j) <span class="ruby-operator">&&</span> element_i <span class="ruby-operator">==</span> element_j
+                  <span class="ruby-operator">return</span> <span class="ruby-integer">true</span>
+                <span class="ruby-operator">end</span>
+              <span class="ruby-operator">end</span>
+            <span class="ruby-operator">end</span>
+            <span class="ruby-operator">return</span> <span class="ruby-integer">false</span>
+          <span class="ruby-operator">end</span>
+        </div>
+        <p>These are just some examples of the big O notation and how you can compare them to simple programs. Obviously, as programs get larger, you want to minimize the workload of your algorithms and optimize performance. Big O complexity is something to keep an eye on when trying to write efficient code.</p>
       </div>
     </div>
     <div class="sidebar">
