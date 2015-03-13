@@ -1,0 +1,27 @@
+html {
+  background-color: #D4D3C4;
+}
+.container {
+  width: 80%;
+  margin: 20px auto;
+}
+header {
+  font-family: fantasy;
+  text-align: center;
+  border: 5px solid red;
+}
+#main-content {
+  font-family: sans-serif;
+  width: 72%;
+  display: inline-block;
+}
+#image-content {
+  margin-top: 20px;
+  width: 24%;
+  float: right;
+  display: inline-block;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}

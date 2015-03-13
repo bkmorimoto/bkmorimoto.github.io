@@ -1,0 +1,53 @@
+html {
+  background-color: #B3FFBB;
+}
+header {
+  border: 3px solid black;
+  height: 100px;
+  font-size: 35px;
+  text-align: center;
+}
+.socmed {
+  float: right;
+  margin-right: 10px;
+}
+.media {
+  margin: -3px;
+  height: 0px;
+}
+.subhead {
+  font-size: 15px;
+  margin-left: 12px;
+}
+.headtitle {
+  font-size: 35px;
+  margin-left: 108px;
+}
+img {
+  image
+}
+.myButton {
+  box-shadow: 0px 10px 14px -7px #3e7327;
+  background-color:#77b55a;
+  border-radius:4px;
+  border:1px solid #4b8f29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:13px;
+  font-weight:bold;
+  padding:6px 12px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #5b8a3c;
+}
+.myButton:hover {
+  background-color:#72b352;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+#buttons {
+  text-align: center;
+  padding-top: 10px;
+}
